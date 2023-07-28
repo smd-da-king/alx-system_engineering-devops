@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# infinite kill a process
+
+pidToKill=$(ps auxf | awk '/\.\/4-to_infinity_and_beyond/ {print $2}')
+
+kill "$pidToKill"
