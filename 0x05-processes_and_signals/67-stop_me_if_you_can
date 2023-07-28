@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# infinite kill a process
+
+pidToKill=$(ps auxf | awk '/\.\/7-highlander/ {print $2}')
+
+kill "$pidToKill"

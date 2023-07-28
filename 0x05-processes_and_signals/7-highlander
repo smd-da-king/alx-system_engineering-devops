@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# infinite loop
+
+inivi() {
+    echo "I am invincible!!!"
+}
+
+i=1
+while ((i))
+do
+    echo "To infinity and beyond"
+    sleep 2
+    trap inivi SIGTERM
+done

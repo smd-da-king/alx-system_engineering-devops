@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# infinite kill a process
+
+./5-dont_stop_me_now
