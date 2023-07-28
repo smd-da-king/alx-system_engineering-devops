@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# diplay PID/BASH Processes
+
+top -bn1 | awk '{print $1, $12}' | grep "bash"
