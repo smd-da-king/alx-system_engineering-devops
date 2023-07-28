@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# infinite loop
+
+sigintHandler() {
+    echo "Y U no love me?!"
+}
+
+sigquitHandler() {
+    rm /var/run/myscript.pid
+    exit
+}
+
+sigtermHandler() {
+    echo "I hate the kill command"
+}
+
+# create myscript.pid
+echo "$$" > /var/run/myscript.pid
+
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+    trap 'sigtermHandler && sigquitHandler' SIGTERM
+    trap sigintHandler SIGINT
+    trap sigquitHandler SIGQUIT
+done
