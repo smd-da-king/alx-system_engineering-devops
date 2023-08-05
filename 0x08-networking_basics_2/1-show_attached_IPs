@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# display IPv4 activities
+
+ifconfig | awk '/inet [0-9]+/ {print $2}'
