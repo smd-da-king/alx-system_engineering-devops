@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# install nginx
+
+# configure haproxy
+sudo apt update -y
+sudo apt-get -y install haproxy
+
+haproxy_config="
+frontend my_web
+        bind *:80
+        default_backend my_web_backend
+
+backend my_web_backend
+        server 369051-web-01 54.90.21.58:80 check
+        server 369051-web-02 54.144.46.194:80 check"
+
+sudo echo "$haproxy_config" >> /etc/haproxy/haproxy.cfg
+
+#Start haproxy
+sudo service haproxy restart
