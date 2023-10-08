@@ -40,5 +40,5 @@ frontend my_web
         default_backend my_web_backend
 
 backend my_web_backend
-        server 369051-web-01 54.90.21.58:80
-        server 369051-web-02 54.144.46.194:80
+        server 369051-web-01 100.25.202.219:80
+        server 369051-web-02 54.226.9.114:80
